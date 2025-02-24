@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Uncommon HTML Bug Solution</title>
+</head>
+<body>
+  <div id="myDiv">
+    This text is visible.
+  </div>
+
+  <script>
+    // Correctly checking for the existence of the element
+    const element = document.getElementById("myDiv2");
+    if (element) {
+      element.innerHTML = "This text is now visible.";
+    } else {
+      console.error("Element with ID 'myDiv2' not found.");
+      // Optionally create the element
+      const newDiv = document.createElement("div");
+      newDiv.id = "myDiv2";
+      newDiv.innerHTML = "This text is now visible.";
+      document.body.appendChild(newDiv);
+    }
+  </script>
+</body>
+</html>
